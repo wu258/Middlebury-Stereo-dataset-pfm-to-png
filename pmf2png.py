@@ -18,6 +18,7 @@ def get_pfms_path(path,result):
             file_type=os.path.splitext(file_path)[-1]
             if ".pfm"==file_type:
                 object_type=file_path.split('/')[-2]
+                #change the path by your own structure
                 calib_file_path="MiddEval3-data-F//MiddEval3-data-F//MiddEval3//trainingF//"+object_type+"//calib.txt"
                 result.append((file_path,calib_file_path))
     return result
@@ -90,7 +91,7 @@ def show(img,path):
 
 
 def main():
-    path="./"
+    path="./" #the path of input folder
     path_set=[]
     path_set=get_pfms_path(path,path_set)
     for item in path_set:
